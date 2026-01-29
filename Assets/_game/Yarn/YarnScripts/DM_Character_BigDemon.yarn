@@ -1,0 +1,37 @@
+﻿title: BigDemonDialogue
+---
+
+<<if $QuestComplete_BigDemon and not $BigDemon_QuestReacted>>
+    <<set $BigDemon_QuestReacted = true>>
+    <<jump BigDemon_AfterQuest>>
+
+<<elseif $BigDemon_TimesTalked == 1>>
+    <<jump BigDemon_SecondTime>>
+
+<<else>>
+    <<jump BigDemon_FirstTime>>
+<<endif>>
+
+===
+
+title: BigDemon_FirstTime
+---
+Big Demon: RAAAAAAAGH! WHO DARES DISTURB THE WORK OF BELZENLOK OF URBORG?
+Mask: That would be me, Mask of Upper Management.
+Big Demon: *ACK* UPPER MANAGEMENT YOU SAY?
+Big Demon: BELZENLOK HAS DECIDED HE IS FINE WITH THE UNANNOUNCED ENTRY, ACTUALLY.
+===
+
+title: BigDemon_SecondTime
+---
+Big Demon: Oh.
+Big Demon: It is you again.
+Big Demon: BELZENLOK IS BUSY.
+===
+
+title: BigDemon_AfterQuest
+---
+Big Demon: WAIT.
+Big Demon: YOU ACTUALLY DID IT?
+Big Demon: BELZENLOK IS... IMPRESSED.
+===
