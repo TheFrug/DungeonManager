@@ -41,15 +41,15 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Above
-    uniqueID: 1506338415
-    locked: 0
-  - name: Characters
-    uniqueID: 703994129
+  - name: Ground
+    uniqueID: 172420573
     locked: 0
   - name: Props
     uniqueID: 2870079137
     locked: 0
-  - name: Ground
-    uniqueID: 172420573
+  - name: Characters
+    uniqueID: 703994129
+    locked: 0
+  - name: Above
+    uniqueID: 1506338415
     locked: 0
