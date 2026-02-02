@@ -1,0 +1,37 @@
+﻿title: Steve
+---
+<<if $Steve_TimesTalked >= 1>>
+    <<jump Steve_SecondTime>>
+<<else>>
+    <<jump Steve_FirstTime>>
+<<endif>>
+===
+
+title: Steve_FirstTime
+---
+Repair Zombie: Urrrrrrr... Wezt wing...
+Dr. Mask: Um...
+Repair Zombie: Wezt Wing is... Wezt Wing is... 
+Dr. Mask: You can do it, big guy.
+Repair Zombie: CLOZED! WEZT WING IS CLOZED!
+-> Why is it closed?
+    Dr. Mask: Closed? No part of the dungeon should be closed. Why in Dippel's name is the west wing closed?
+    Repair Zombie: Big boom... boss down there... 
+    Dr. Mask: Boss? You mean the boss of this floor?
+    Repair Zombie: Urg... you make Steve brain hurt.
+-> Is this really the best job for you?
+    Dr. Mask: I can't help but think your talents are being misplaced standing in front of a big hole in the dungeon.
+    Repair Zombie: Steve trying... do best he can...
+    Repair Zombie: Mizzing frontal lobe...
+    Repair Zombie: Wuz eaten by other zombie...
+<<set $Steve_TimesTalked += 1>>
+===
+
+title: Steve_SecondTime
+---
+Dr. Mask: Hello again, Steve. How go repairs?
+Steve: You say Steve name... We bezt frends now...
+Dr. Mask: I'm not your friend, Steve. I'm your boss. Your boss's boss, actually.
+Steve: STEVE PAINT MUG. MUG SAY 'BEZT BOZZ'Z BOZZ EVER!'
+Steve: GOOD USE OF LUNCH PERIOD.
+===

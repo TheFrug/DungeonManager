@@ -1,0 +1,26 @@
+﻿title: Watercooler
+---
+
+<<if $Watercooler_TimesTalked >= 1>>
+    <<jump Watercooler_SecondTime>>
+
+<<else>>
+    <<jump Watercooler_FirstTime>>
+<<endif>>
+
+
+===
+title: Watercooler_FirstTime
+---
+Violent Masked Minion: So anyways, I kicked the guy in the head 'til he was dead! HA!
+Civil Imp: Hohoho, my good fellow! A jolly story, as always!
+Civil Imp: Did you hear about the executive director coming to do a floor review?
+Violent Masked Minion: Oh, that new four-eyed dungeon boss? He'll probably be scared stiff when he sees us!
+Violent Masked Minion: Yo, new guy with the stupid mask. If you want water, you gotta wait in line. 
+<<set $Watercooler_TimesTalked += 1>>
+===
+title: Watercooler_SecondTime
+---
+Violent Masked Minion: So anyways, I kicked the guy in the head 'til he was dead! HA!
+Civil Imp: Hohoho, my good fellow! That story gets better every time you tell it!
+===

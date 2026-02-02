@@ -1,0 +1,39 @@
+﻿title: CivilImp
+---
+<<declare $RevealedIdentity = false>>
+
+<<if $CivilImp_TimesTalked >= 1>>
+    <<jump CivilImp_SecondTime>>
+
+<<else>>
+    <<jump CivilImp_FirstTime>>
+<<endif>>
+===
+
+title: CivilImp_FirstTime
+---
+Civil Imp: Good day to you, sir! I must say, I've not seen you around the second floor before. 
+-> Introduce yourself as Dr. Mask
+    <<set $RevealedIdentity = true>>
+    Dr. Mask: That's because I spend most of my time studying on the fifth layer, in my laboratory.
+    Dr. Mask: My name is Dr. Mask. I'm the boss of this dungeon. 
+    Civil Imp: You don't say...
+    <<set $CivilImp_TimesTalked += 1>>
+-> Pretend to be a minion
+    Dr. Mask: Yes, unfortunately. I'm frightfully new to this place and spend every waking moment quaking in fear.
+    Civil Imp: Aw, don't be scared, new guy! The dungeon industry seems scary, but its all about who your direct report is!
+    Civil Imp: If you're lucky like me, you'll be working for a standup guy like BELZENLOK.
+    Civil Imp: Did you know he works at a soup kitchen on weekends? 
+    <<set $CivilImp_TimesTalked += 1>>
+===
+
+title: CivilImp_SecondTime
+---
+<<if $RevealedIdentity == true>>
+Civil Imp: Hey, Dr. Mask. I'm not in any trouble am I?
+<<else>>
+Civil Imp: Hey, new guy! If you have a second, you gotta listen to this story! Tell it again, Ron!
+Violent Masked Minion: If you say so. So basically, I kicked this guy in the head 'til he was dead! HA!
+Civil Imp: *Wiping away tears* Gets me every time.
+<<endif>>
+===

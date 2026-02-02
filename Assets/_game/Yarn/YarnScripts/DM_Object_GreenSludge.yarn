@@ -1,0 +1,19 @@
+﻿title: GreenSludge
+---
+<<if $GreenSludge_TimesTalked >= 1>>
+    <<jump GreenSludge_SecondTime>>
+<<else>>
+    <<jump GreenSludge_FirstTime>>
+<<endif>>
+===
+
+title: GreenSludge_FirstTime
+---
+With your scientific expertise, you can tell just by looking that this green sludge is not up to code
+<<set $GreenSludge_TimesTalked += 1>>
+===
+
+title: GreenSludge_SecondTime
+---
+Yup. The PH balance is all wrong, here.
+===

@@ -28,14 +28,10 @@ public class Interactable : MonoBehaviour
     private void Awake()
     {
         if (isCharacter && spriteRenderer == null)
-        {
             spriteRenderer = GetComponentInChildren<SpriteRenderer>();
-        }
 
         if (isCharacter && spriteRenderer == null)
-        {
             Debug.LogError($"[Interactable] No SpriteRenderer found on {name}");
-        }
     }
 
     private void Update()
@@ -43,9 +39,7 @@ public class Interactable : MonoBehaviour
         if (!playerInRange) return;
 
         if (Input.GetKeyDown(KeyCode.Z))
-        {
             Interact();
-        }
     }
 
     private void Interact()
@@ -53,12 +47,11 @@ public class Interactable : MonoBehaviour
         if (isCharacter)
         {
             originalFlipX = spriteRenderer != null && spriteRenderer.flipX;
-            FacePlayer();
 
             if (dialogueRunner != null)
             {
                 dialogueRunner.onDialogueComplete.AddListener(RestoreOriginalFacing);
-                dialogueRunner.onDialogueComplete.AddListener(IncrementInteractionCount); // <--- increment AFTER dialogue
+                dialogueRunner.onDialogueComplete.AddListener(IncrementInteractionCount);
             }
         }
 
@@ -68,6 +61,25 @@ public class Interactable : MonoBehaviour
         dialogueRunner.StartDialogue(startNode);
     }
 
+    // ===== YARN COMMAND =====
+    [YarnCommand("face_player")]
+    public void FacePlayerCommand()
+    {
+        FacePlayer();
+    }
+
+    private void FacePlayer()
+    {
+        if (!isCharacter) return;
+        if (spriteRenderer == null || playerTransform == null) return;
+
+        bool playerIsOnLeft = playerTransform.position.x < transform.position.x;
+
+        if (defaultFacing == DefaultFacing.Right)
+            spriteRenderer.flipX = playerIsOnLeft;
+        else
+            spriteRenderer.flipX = !playerIsOnLeft;
+    }
 
     private void IncrementInteractionCount()
     {
@@ -80,33 +92,16 @@ public class Interactable : MonoBehaviour
             storage.SetValue(interactionCountVariable, currentValue + 1);
         }
 
-        // Remove itself immediately to avoid double incrementing
         dialogueRunner.onDialogueComplete.RemoveListener(IncrementInteractionCount);
     }
 
     private void RestoreOriginalFacing()
     {
         if (spriteRenderer != null)
-        {
             spriteRenderer.flipX = originalFlipX;
-        }
 
         if (dialogueRunner != null)
-        {
             dialogueRunner.onDialogueComplete.RemoveListener(RestoreOriginalFacing);
-        }
-    }
-
-    private void FacePlayer()
-    {
-        if (spriteRenderer == null || playerTransform == null) return;
-
-        bool playerIsOnLeft = playerTransform.position.x < transform.position.x;
-
-        if (defaultFacing == DefaultFacing.Right)
-            spriteRenderer.flipX = playerIsOnLeft;
-        else
-            spriteRenderer.flipX = !playerIsOnLeft;
     }
 
     private void OnTriggerEnter2D(Collider2D other)

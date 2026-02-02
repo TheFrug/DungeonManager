@@ -1,37 +1,42 @@
-﻿title: BigDemonDialogue
+﻿title: BigDemon_FirstTime
 ---
-
-<<if $QuestComplete_BigDemon and not $BigDemon_QuestReacted>>
-    <<set $BigDemon_QuestReacted = true>>
-    <<jump BigDemon_AfterQuest>>
-
-<<elseif $BigDemon_TimesTalked == 1>>
-    <<jump BigDemon_SecondTime>>
-
-<<else>>
-    <<jump BigDemon_FirstTime>>
-<<endif>>
-
-===
-
-title: BigDemon_FirstTime
----
-Big Demon: RAAAAAAAGH! WHO DARES DISTURB THE WORK OF BELZENLOK OF URBORG?
-Mask: That would be me, Mask of Upper Management.
-Big Demon: *ACK* UPPER MANAGEMENT YOU SAY?
-Big Demon: BELZENLOK HAS DECIDED HE IS FINE WITH THE UNANNOUNCED ENTRY, ACTUALLY.
+BELZENLOK OF URBORG: RAAAAAAAGH! FOOLISH ADVENTURER, THIS WILL BE YOUR LAST MISTAKE
+BELZENLOK OF URBORG: I WILL INCINERATE YOU AND USE YOUR BONES AS CUTTLERY TO EAT YOUR DOG AND FAVORITE BARKEEP.
+BELZENLOK OF URBOG: TELL ME, BEFORE I CAST THEE INTO OBLIVION: WHO DARES DISTURB THE WORK OF BELZENLOK OF URBORG?
+Dr. Mask: That would be me, Dr. Mask of the Fifth Layer.
+BELZENLOK OF URBORG: *ACK* Upper management, you say?
+BELZENLOK OF URBORG: OH NO. HAS THE FLOOR REVIEW DAY ARRIVED ALREADY?
+Dr. Mask: Trust me, I don't want to be here either, but a certain floor boss has gone AWOL. Do you know anything about that?
+BELZENLOK OF URBORG: DOOMINATOR 5000 AND BELZENLOK DON'T REALLY TALK MUCH. I SIMPLY MANAGE THE FOOLISH IMPS OF THIS FLOOR, MR. MASK.
+Dr. Mask: Here I thought we were a big, happy, murderous family. And that's DOCTOR Mask to you, peon.
+BELZENLOK OF URBORG: SORRY, DR MASK, SIR.
+BELZENLOK OF URBOG: BELZENLOK IS SURE ONE OF THE BLABBERMOUTH MINIONS WILL DIVULGE WHAT THEY KNOW.
+-> Thank him for the info
+    Dr. Mask: Thanks for the info, BEZLENLOK (am I pronouncing that right?)
+    BELZENLOK OF URBOG: LIKE YOU'RE SAYING 'BELLS IN LOCK'
+-> Leave
+    Dr. Mask: I better go clean up this floor's mess.
 ===
 
 title: BigDemon_SecondTime
 ---
-Big Demon: Oh.
-Big Demon: It is you again.
-Big Demon: BELZENLOK IS BUSY.
+BELZENLOK OF URBORG: WHO DARES DISTURB THE GREAT-
+BELZENLOK OF URBORG: Oh its you again.
+BELZENLOK OF URBORG: HOW GOES THE SEARCH FOR INFORMATION?
+-> IT GOES WELL, MY FELLOW MONSTER
+    BELZENLOK OF URBOG: WOAH. BELZENLOK NOT KNOW IF YOU CAN USE THAT WORD.
+    BELZENLOK OF URBOG: IN ANY CASE, THE LESS HELP YOU NEED FROM BELZENLOK, THE BETTER
+-> eeeeeeeeeh
+    BELZENLOK OF URBOG: AS A HEADS-UP: THE LAST FINAL BOSS TO DO A FLOOR REVIEW WAS THE PREVIOUS EXECUTIVE DIRECTOR.
+    BELZENLOK OF URBORG: THAT WAS BEFORE [b]THE INCIDENT[/b].
+    Dr. Mask: I understand things have come to a state of disrepair since before I joined the legion of Malfegor the Eternal Defiler.
+    BELZENLOK OF URBOG: TRUE, BUT NOT WHAT I AM SAYING.
+    BELZENLOK OF URBOG: 
 ===
 
 title: BigDemon_AfterQuest
 ---
-Big Demon: WAIT.
-Big Demon: YOU ACTUALLY DID IT?
-Big Demon: BELZENLOK IS... IMPRESSED.
+BELZENLOK OF URBORG: WAIT.
+BELZENLOK OF URBORG: YOU ACTUALLY DID IT?
+BELZENLOK OF URBORG: BELZENLOK IS... IMPRESSED.
 ===
