@@ -1,5 +1,6 @@
 using UnityEngine;
 using Yarn.Unity;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -39,6 +40,25 @@ public class Player : MonoBehaviour
     private void Update()
     {
         FinishQuest();
+
+        // Quit game with Escape
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+
+        #if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+        #endif
+        }
+
+        // Restart scene with Tab
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            UnityEngine.SceneManagement.SceneManager.LoadScene(
+                UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex
+            );
+        }
+
     }
 
     private void FixedUpdate()
