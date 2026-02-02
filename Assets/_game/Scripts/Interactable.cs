@@ -22,7 +22,6 @@ public class Interactable : MonoBehaviour
 
     public bool playerInRange;
     private Transform playerTransform;
-
     private bool originalFlipX;
 
     private void Awake()
@@ -44,14 +43,16 @@ public class Interactable : MonoBehaviour
         {
             Interact();
         }
-
     }
 
     private void Interact()
     {
         if (isCharacter)
         {
-            originalFlipX = spriteRenderer != null && spriteRenderer.flipX;
+            originalFlipX = spriteRenderer.flipX;
+
+            // Flip to face the player immediately
+            FacePlayer();
 
             if (dialogueRunner != null)
             {
@@ -66,24 +67,15 @@ public class Interactable : MonoBehaviour
         dialogueRunner.StartDialogue(startNode);
     }
 
-    // ===== YARN COMMAND =====
-    [YarnCommand("face_player")]
-    public void FacePlayerCommand()
-    {
-        FacePlayer();
-    }
-
     private void FacePlayer()
     {
-        if (!isCharacter) return;
-        if (spriteRenderer == null || playerTransform == null) return;
+        if (!isCharacter || spriteRenderer == null || playerTransform == null) return;
 
+        // Is player on left side of NPC?
         bool playerIsOnLeft = playerTransform.position.x < transform.position.x;
 
-        if (defaultFacing == DefaultFacing.Right)
-            spriteRenderer.flipX = playerIsOnLeft;
-        else
-            spriteRenderer.flipX = !playerIsOnLeft;
+        // Flip sprite if player is behind NPC
+        spriteRenderer.flipX = (defaultFacing == DefaultFacing.Right) ? playerIsOnLeft : !playerIsOnLeft;
     }
 
     private void IncrementInteractionCount()
