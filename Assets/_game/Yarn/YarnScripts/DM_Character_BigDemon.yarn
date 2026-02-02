@@ -1,4 +1,13 @@
-﻿title: BigDemon_FirstTime
+﻿title: BigDemonDialogue
+---
+<<if $BigDemon_TimesTalked == 1>>
+    <<jump BigDemon_SecondTime>>
+<<else>>
+    <<jump BigDemon_FirstTime>>
+<<endif>>
+===
+
+title: BigDemon_FirstTime
 ---
 BELZENLOK OF URBORG: RAAAAAAAGH! FOOLISH ADVENTURER, THIS WILL BE YOUR LAST MISTAKE
 BELZENLOK OF URBORG: I WILL INCINERATE YOU AND USE YOUR BONES AS CUTTLERY TO EAT YOUR DOG AND FAVORITE BARKEEP.
@@ -32,11 +41,4 @@ BELZENLOK OF URBORG: HOW GOES THE SEARCH FOR INFORMATION?
     Dr. Mask: I understand things have come to a state of disrepair since before I joined the legion of Malfegor the Eternal Defiler.
     BELZENLOK OF URBOG: TRUE, BUT NOT WHAT I AM SAYING.
     BELZENLOK OF URBOG: 
-===
-
-title: BigDemon_AfterQuest
----
-BELZENLOK OF URBORG: WAIT.
-BELZENLOK OF URBORG: YOU ACTUALLY DID IT?
-BELZENLOK OF URBORG: BELZENLOK IS... IMPRESSED.
 ===

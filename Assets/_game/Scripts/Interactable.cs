@@ -38,8 +38,13 @@ public class Interactable : MonoBehaviour
     {
         if (!playerInRange) return;
 
-        if (Input.GetKeyDown(KeyCode.Z))
+        if (Input.GetKeyDown(KeyCode.Z) ||
+            Input.GetKeyDown(KeyCode.Return) ||
+            Input.GetKeyDown(KeyCode.KeypadEnter))
+        {
             Interact();
+        }
+
     }
 
     private void Interact()
